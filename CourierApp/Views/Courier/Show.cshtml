@@ -1,0 +1,174 @@
+﻿@model CourierApp.Models.Courier
+
+@*<script src="~/Scripts/jquery-1.11.1.js"></script>
+<script src="~/Scripts/jquery-ui.min.js"></script>*@
+<script src="~/Scripts/jquery-2.0.0.js"></script>
+<script src="~/Scripts/jquery-ui-1.13.1.js"></script>
+@{
+
+
+
+    ViewBag.Title = "Show";
+
+}
+
+<script type="text/javascript">
+
+    //$(document).ready(function () {
+        $(window).load(function () {
+            // Run code
+        
+
+      //  $("#WorkouttypeID").change(function () {
+            $("#Source").empty();
+            $.ajax({
+                type: 'Get',
+                url: "http://localhost:49424/Courier/GetSouceData",
+                dataType: 'json',
+                //data: { WorkTypeID: $("#WorkouttypeID").val() },
+                success: function (data) {
+                    
+
+                    localStorage.setItem("SouceData", JSON.stringify(data.sourceDestination));
+                    $("#Source").append('<option value="' + "0" + '">' + "Select Source" + '</option>');
+                    $.each(data.source, function (i, obj) {
+                        $("#Source").append('<option value="' + obj.SourceID + '">' + obj.Source + '</option>');
+                    });
+                },
+                error: function (ex) {
+                    alert('Failed to retrieve states.' + ex);
+                }
+            });
+          //  return false;
+        //})
+
+
+    });
+
+</script>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+
+
+        $("#Source").change(function () {
+            
+            $("#Destination").empty();
+            var SouceData = localStorage.getItem("SouceData");//, JSON.stringify(data));
+            var parsedSouceData = JSON.parse(SouceData);
+
+            var filteredData = parsedSouceData.filter(x => x.SourceID == $("#Source").val());
+
+
+            $("#Destination").append('<option value="' + "0" + '">' + "To City" + '</option>');
+
+            $.each(filteredData, function (i, plan) {
+                $("#Destination").append('<option  DistanceKM = "' + plan.DistanceKM + '" value="' + plan.SDID + '">' + plan.Destination + '</option>');
+            });
+
+            return false;
+        })
+
+
+    });
+
+</script>
+
+<center>
+    <h2 style="color:coral">Courier Service</h2>
+
+    <select class="input-lg" name="Source" id="Source">
+
+        <option value="" style="color:#ccc !important;">
+            From City
+        </option>
+        @foreach (var item in ViewBag.source)
+        {
+            <option value="@item.SourceID"> @item.Source    </option>
+        }
+
+    </select>
+    <select class="input-lg" name="Destination" id="Destination">
+
+        <option value="0" style="color:#ccc !important;">
+            To City
+        </option>
+        @foreach (var item in ViewBag.source)
+        {
+            <option value="@item.DestinationID"> @item.Destination </option>
+        }
+    </select>
+    <fieldset>
+        <div class="panel">
+
+            <div class="panel-body">
+
+                <br />
+                <br />
+
+                <div class="row">
+                    <div class="col-md-4">
+                        @Html.DisplayNameFor(model => model.Weight)
+                    </div>
+
+                    <div class="col-md-3">
+                        <input type="text" id="Weight" />
+                        @*@Html.TextBoxFor(model => model.Weight, new { @class = "form-control" })*@
+                    </div>
+
+                </div>
+            </div>
+    </fieldset>
+
+
+
+    <script type="text/javascript">
+
+        function save() {
+            debugger;
+            // Read all input elements
+
+            let sourcedropdown = document.getElementById("Source");
+            var sourcedropdownvalue = sourcedropdown.value;
+            let destdropdown = document.getElementById("Destination");
+            var destdropdownvalue = destdropdown.value;
+            let weight = $("#Weight").val();
+
+            var distance = $("#Destination  option:selected").attr('distancekm')
+
+            var cost = (parseInt(weight) * 2 + parseInt(distance));
+
+            var courier = { Cost: cost, SDID: destdropdownvalue, Weight: weight };
+
+            $.ajax({
+                url: "http://localhost:49424/Courier/Insert",
+                type: "POST",
+                dataType: "json",
+                data: courier,
+                success: function (data) {
+                    alert('Default Cost is Weight * 2 + distance :: ' + cost);
+
+
+                }
+            });
+        }
+
+    </script>
+
+
+
+    <div class="row">
+        <div style="margin-top: 5px"></div>
+        <div class="row">
+            <div class="col-md-12">
+                <input id="btnSave" class="btn btn-success" type="button" onclick="save()" value="Calculate Amount" />
+                @Html.ActionLink("Cancel", "Insert", "Courier", new { @class = "btn btn-success" })
+            </div>
+        </div>
+        <div style="margin-top: 5px"></div>
+
+    </div>
+
+
+
+</center>

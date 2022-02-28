@@ -1,0 +1,430 @@
+﻿.model-toggle.collapsed::after {
+    content: '\2794';
+    width: 10px;
+    height: 10;
+    padding-left: 15px;
+    padding-right: 25px;
+    color: orange;
+    background-color: transparent !important;
+}
+
+.model-toggle::after {
+    content: '\21A9';
+    width: 10px;
+    height: 10;
+    padding-left: 15px;
+    padding-right: 25px;
+    color: #4eb509;
+    background-color: transparent !important;
+    /*display: inline-block;
+            width: 10px;
+            height: 10px;
+            -moz-border-radius: 7.5px;
+            -webkit-border-radius: 7.5px;
+            border-radius: 7.5px;
+            background-color: #6cbd09;
+            padding-left: 15px;
+            padding-right: 25px;*/
+}
+
+small {
+    font-size: 11px;
+}
+
+.expand-operation {
+    height: 22px;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    display: none;
+}
+
+svg.arrow {
+    width: 10px;
+    height: 10px;
+}
+
+h4.opblock-tag {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    /*background-color:  #FDC47F;*/
+    padding-left: 5px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-bottom: 1px #aaa solid;
+    cursor: pointer;
+}
+
+.markdown {
+    font-family: calibri;
+    letter-spacing: 1px;
+    padding-top: 5px;
+    line-height: 20px;
+}
+
+span.opblock-summary-method {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 25px;
+    text-transform: uppercase;
+    font-weight: bold;
+    margin-right: 20px;
+}
+
+span.opblock-summary-path {
+    color: #333c4e;
+    font-size: 25px;
+    word-break: break-all;
+    font-size: 25px;
+}
+
+.auth-container input[type=text] {
+    border: 1px black solid;
+}
+
+.auth-container input[type=password] {
+    border: 1px black solid;
+}
+
+.authorization__btn {
+    padding: 6px 12px;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    float: right;
+    margin-right: 15px;
+    position: relative;
+    top: -36px;
+}
+
+.opblock-summary-description {
+    position: relative;
+    top: -55px;
+    font-family: Calibri, sans-serif;
+    font-weight: normal;
+    font-size: 14px;
+    color: #888;
+    letter-spacing: 1px;
+    margin-left: 2px;
+}
+
+.authorization__btn.unlocked {
+    background-color: orange;
+}
+
+.authorization__btn.locked {
+    background-color: lawngreen;
+}
+
+.opblock {
+    padding-top: 30px;
+    margin-bottom: 65px;
+    border-bottom: 5px orange solid;
+}
+
+table {
+    width: 100%;
+    margin-top: 15px;
+}
+
+    table div {
+        font-family: verdana, sans-serif;
+        font-size: 13px;
+    }
+
+.parameter__type, .parameter__in {
+    color: #666;
+    font-family: verdana;
+    float: left;
+}
+
+.parameter__type {
+    color: #008080;
+}
+
+.parameter__name {
+    float: left;
+    margin-right: 20px;
+    width: 190px;
+}
+
+th {
+    width: 50%;
+}
+
+thead {
+    border-bottom: 1px #ccc solid;
+    background-color: #ddd;
+}
+
+    thead td, th {
+        padding: 5px !important;
+        font-weight: normal;
+    }
+
+table.parameters td {
+    padding-top: 10px;
+}
+
+.opblock-body h4 {
+    padding: 13px 15px 10px 15px;
+    color: #333;
+    font-size: 22px;
+    line-height: 30px;
+    user-select: text;
+    font-weight: lighter;
+    border-bottom: 1px orange solid;
+    margin-bottom: 50px;
+    margin-top: 50px;
+}
+
+#primarytabs li a {
+    font-size: 19px;
+    font-weight: bold;
+}
+
+li.tabitem:hover a {
+    background-color: transparent !important;
+}
+
+.responses-wrapper {
+    padding: 25px 0px;
+    margin-top: 50px;
+}
+
+.nav {
+    margin-top: 20px;
+}
+
+.nav-tabs li a {
+    border: 0px !important;
+    padding-top: 0px !important;
+    padding-bottom: 0px !important;
+    background-color: transparent !important;
+}
+
+.nav-tabs li {
+    padding: 10px;
+    padding-bottom: 1px;
+    padding-top: 5px;
+}
+
+    .nav-tabs li a:hover {
+        background-color: transparent;
+    }
+
+li.active {
+    background-color: orange;
+}
+
+    li.active a {
+        color: white !important;
+    }
+
+    li.active > a:hover {
+        background-color: transparent !important;
+    }
+
+.tabitem {
+    padding: 5px;
+    border-top-left-radius: 25px;
+    border-top-right-radius: 25px;
+    border-top: 2px #ccc solid;
+}
+
+    .tabitem:hover {
+        background-color: orange;
+    }
+
+    .tabitem.active {
+        /*background-color: rgba(255, 200, 20, 0.6);*/
+        /*width: 112px;*/
+        border-top-left-radius: 25px;
+        border-top-right-radius: 25px;
+        border-top: 2px orange solid;
+    }
+
+.responses-table td:first-child {
+    width: 150px;
+    vertical-align: top;
+    padding-top: 10px;
+}
+
+.tablinks {
+    cursor: pointer;
+    text-align: center;
+}
+
+.response-col_description__inner .markdown {
+    font-size: 15px;
+    font-weight: bold;
+}
+
+.responses-table tr.response[data-code="200"] td.response-col_status::before {
+    color: #3b99fc;
+}
+
+.responses-table tr.response[data-code="200"] td.response-col_status::before {
+    content: '';
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    -moz-border-radius: 7.5px;
+    -webkit-border-radius: 7.5px;
+    border-radius: 7.5px;
+    background-color: #4eb509;
+    margin-right: 10px;
+}
+
+.opblock-section-header label {
+    font-weight: normal;
+}
+
+.model {
+    color: #337ab7;
+}
+
+span.prop-type {
+    margin-left: 50px;
+    color: #008080;
+}
+
+table.model {
+    font-size: 13px;
+    line-height: 30px;
+    color: gray;
+    /*left: 100px;*/
+    position: relative;
+    width: auto;
+    border: 1px #ccc solid;
+}
+
+.model-hint {
+    display: none;
+}
+
+.responses-wrapper .opblock-section-header label {
+    display: none;
+}
+
+.responses-wrapper h4::after {
+    content: 'application/json';
+    color: #999;
+    margin-left: 30px;
+    font-size: 18px;
+}
+
+.try-out__btn {
+    color: #fff;
+    background-color: #5bc0de;
+}
+
+.opblock-summary {
+    cursor: pointer;
+}
+
+.baseurl {
+    letter-spacing: 2px;
+}
+
+.base-url {
+    display: none;
+}
+
+.selectedapi {
+    background-color: #ffad0f69;
+}
+
+.model .prop .markdown {
+    float: right;
+    width: 50%;
+}
+
+.model-container table.model td {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+.model-container table.model tr:nth-child(even) {
+    background-color: #dfdfdf;
+}
+
+#modelscontainer .model-container {
+    margin-bottom: 15px;
+    margin-left: 10px;
+}
+
+#modelscontainer h4 {
+    font-size: 35px;
+    background-color: orange;
+    text-align: center;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.opblock-summary-post .opblock-summary-method {
+    color: #ff2300b8;
+}
+
+.opblock-summary-get .opblock-summary-method {
+    color: rgb(39, 174, 96);
+}
+
+.opblock-summary-put .opblock-summary-method {
+    color: #3f00ffb8;
+}
+
+.btn-success-custom {
+    background-image: -webkit-linear-gradient(top,#5cb85c 0,#419641 100%);
+    background-image: -o-linear-gradient(top,#5cb85c 0,#419641 100%);
+    background-image: -webkit-gradient(linear,left top,left bottom,from(#5cb85c),to(#419641));
+    background-image: linear-gradient(to bottom, #5cb85c 0, #419641 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff5cb85c', endColorstr='#ff419641', GradientType=0);
+    filter: progid:DXImageTransform.Microsoft.gradient(enabled=false);
+    background-repeat: repeat-x;
+    border-color: #3e8f3e;
+    display: inline-block;
+    padding: 6px 12px;
+    margin-bottom: 0;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.42857143;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    -ms-touch-action: manipulation;
+    touch-action: manipulation;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background-image: none;
+    border: 1px solid transparent;
+    border-top-color: transparent;
+    border-right-color: transparent;
+    border-bottom-color: transparent;
+    border-left-color: transparent;
+    border-radius: 4px;
+    text-shadow: 0 -1px 0 rgba(0,0,0,.2);
+    -webkit-box-shadow: inset 0 1px 0 rgba(255,255,255,.15),0 1px 1px rgba(0,0,0,.075);
+    box-shadow: inset 0 1px 0 rgba(255,255,255,.15),0 1px 1px rgba(0,0,0,.075);
+    color: #fff;
+    background-color: #5cb85c;
+    border-color: #4cae4c;
+    margin-top: 6px;
+    margin-right: 10px;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    text-decoration: none;
+}
+
+div.model-box {
+    padding-top: 10px;
+}
+
+table.model td {
+    padding: 10px;
+}
+
+.tabitem a {
+    text-align: center;
+}
